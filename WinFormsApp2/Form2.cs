@@ -43,7 +43,7 @@ namespace WinFormsApp2
             
             
         }
-        private void AssignSpecificCallBtn_Click(object sender, EventArgs e)
+        private void AssignSpecificCallBtn_Click(object sender, EventArgs e) 
         {
             string CustomerId = CustomerIdTextBox.Text;
             if (AssignSpecificCallInputIsValid(CustomerRepresentativeComboBox2.SelectedItem,CustomerId))
@@ -62,7 +62,7 @@ namespace WinFormsApp2
             }
 
         }
-        private bool AssignSpecificCallInputIsValid(object rp,string CustomerId) 
+        private bool AssignSpecificCallInputIsValid(object rp,string CustomerId) // specific id girilmiş çağrıların inputlarını kontrol eder
         {
             if (Globals.CallQueue.IsEmpty())
             {
@@ -97,7 +97,7 @@ namespace WinFormsApp2
             return true;
         }
 
-        private bool AssignCallInputIsValid( object rp)
+        private bool AssignCallInputIsValid( object rp)// sırada bekleyen çağrıların combobox'ını kontrol eder
         {
             if (Globals.CallQueue.IsEmpty())
             {
@@ -130,7 +130,7 @@ namespace WinFormsApp2
             return true;
         }
 
-        private object FindCustomerRepresentativeById(int Id)
+        private object FindCustomerRepresentativeById(int Id)// verilen Id ile müşteri temsilcisini bulur.
         {
 
             CustomerRepresentative ChosenRepresentative = null;
@@ -143,7 +143,7 @@ namespace WinFormsApp2
             }
             return ChosenRepresentative;
         }
-        private object FindCallById(string Id)
+        private object FindCallById(string Id) // Verilen id ile Aranan çağrıyı bulur
         {
             ArrayQueue temp = (ArrayQueue)Globals.CallQueue.Clone();
             while (!temp.IsEmpty())
@@ -156,7 +156,7 @@ namespace WinFormsApp2
             }
             return null;
         }
-        private void FindCallByIdAndRemove(string Id)
+        private void FindCallByIdAndRemove(string Id) // verilen id ile aranan çağrıyı bulur ve kuyruktan çıkarır.
         {
             ArrayQueue empty = new ArrayQueue(100);
             ArrayQueue temp = (ArrayQueue)Globals.CallQueue.Clone();
