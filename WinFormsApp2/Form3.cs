@@ -35,7 +35,7 @@ namespace WinFormsApp2
             
         }
 
-        private void Sort(object[] CustomerRepresentatives) {
+        private void Sort(object[] CustomerRepresentatives) { // bubble sort algoritması ile müşteri temsilcilerini tamamlanan arama sayısına göre sıralama
             int scan;
             bool swapped = false;
             for ( scan = 0; scan< CustomerRepresentatives.Length; scan++) {
