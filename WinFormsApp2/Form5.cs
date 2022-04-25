@@ -23,7 +23,7 @@ namespace WinFormsApp2
 
         }
 
-        private bool Contains(string Notes, string SearchKey)
+        private bool Contains(string Notes, string SearchKey) // lineer search algoritmasi ile icerme durumunu öğrenme
         {
             string[] SplittedByWords = Notes.ToLower().Split(' ');
             for (int i = 0; i < SplittedByWords.Length; i++)
@@ -36,7 +36,7 @@ namespace WinFormsApp2
             return false;
         }
 
-        private void AraBtn_Click(object sender, EventArgs e)
+        private void AraBtn_Click(object sender, EventArgs e) // tamamlanmış çağrılarda aranan kelimenin içerip içermediği
         {
             string SearchKey = SearchTxtBox.Text.ToLower();
             ResultTable.Rows.Clear();
